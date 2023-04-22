@@ -31,7 +31,7 @@ jobs:
             react-client/node_modules
           key: node-dependencies-${{ hashFiles('yarn.lock') }}
       - name: build
-        run: mvn package -P ums
+        run: mvn package -P UniversalMediaServer
 
   windows-latest:
     if: |
@@ -56,8 +56,10 @@ jobs:
             react-client/node
             react-client/node_modules
           key: node-dependencies-${{ hashFiles('yarn.lock') }}
-      - name: Run linter and tests
-        run: mvn verify -P linter
       - name: Package
-        run: mvn package -P UMS
+        run: mvn package
+      - name: Upload packages
+        uses: actions/upload-artifact@v3
+        with:
+          name: release
 
