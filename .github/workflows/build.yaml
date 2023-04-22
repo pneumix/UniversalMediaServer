@@ -45,6 +45,10 @@ jobs:
         run: |
           choco install mediainfo-cli
           winget install mediainfo
+      - name: cmd dependencies
+        shell: cmd
+        run: |
+          winget install mediainfo
       - uses: actions/checkout@v3
       - name: Set up JDK
         uses: actions/setup-java@v3
