@@ -40,6 +40,10 @@ jobs:
     name: Windows and lint
     runs-on: windows-latest
     steps:
+      - name: Install dependencies
+        shell: bash
+        run: |
+          choco install mediainfo
       - uses: actions/checkout@v3
       - name: Set up JDK
         uses: actions/setup-java@v3
