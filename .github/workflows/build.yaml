@@ -43,7 +43,7 @@ jobs:
       - name: Install dependencies
         shell: bash
         run: |
-          choco install mediainfo
+          choco install mediainfo-cli
       - uses: actions/checkout@v3
       - name: Set up JDK
         uses: actions/setup-java@v3
